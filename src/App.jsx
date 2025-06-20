@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Attendence from './components/attendence/Attendence';
 import AttendenceReport from './components/attendence/AttendenceReport';
