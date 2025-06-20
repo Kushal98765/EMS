@@ -11,7 +11,7 @@ const Detail = () => {
     useEffect(() => {
         const fetchLeave = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/leave/detail/${id}`, {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/leave/detail/${id}`, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
@@ -30,7 +30,7 @@ const Detail = () => {
 
     const changeStatus = async (id, status) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/leave/${id}`, { status }, {
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/api/leave/${id}`, { status }, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }
@@ -55,7 +55,7 @@ const Detail = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
                     <div>
-                        <img src={`http://localhost:5000/${leave.employeeId.userId.profileImage
+                        <img src={`${process.env.REACT_APP_API_URL}/${leave.employeeId.userId.profileImage
                             }`} className='rounded-full border' style={{ width: '288px', height: '300px' }} />
                     </div>
                     <div>

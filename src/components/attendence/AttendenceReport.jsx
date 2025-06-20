@@ -18,7 +18,7 @@ const AttendenceReport = () => {
       if (dateFilter) {
         query.append("date", dateFilter);
       }
-      const response = await axios.get(`http://localhost:5000/api/attendence/report?${query.toString()}`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/attendence/report?${query.toString()}`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`
         }

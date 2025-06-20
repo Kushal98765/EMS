@@ -26,7 +26,7 @@ const Setting = () => {
         } else {
             try {
                 const response = await axios.put(
-                    "http://localhost:5000/api/setting/change-password",
+                    `${process.env.REACT_APP_API_URL}/api/setting/change-password`,
                     setting,
                     {
                         headers: {

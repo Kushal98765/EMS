@@ -20,7 +20,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
          try {
-                const response = await axios.post(`http://localhost:5000/api/leave/add`, leave, {
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/leave/add`, leave, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }

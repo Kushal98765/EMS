@@ -9,7 +9,7 @@ const View = () => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/employee/${id}`, {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/employee/${id}`, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
@@ -33,7 +33,7 @@ const View = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '24px' }}>
                 <div>
-                    <img src={`http://localhost:5000/${employee.userId.profileImage
+                    <img src={`${process.env.REACT_APP_API_URL}/${employee.userId.profileImage
                         }`} className='rounded-full border' style={{ width: '288px', height:'300px' }} />
                 </div>
                 <div>

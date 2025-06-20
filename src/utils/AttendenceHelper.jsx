@@ -12,7 +12,7 @@ export const columns = [
 export const AttendenceHelper = ({ status, employeeId, statusChange }) => {
   const markEmployee = async (status, employeeId) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/attendence/update/${employeeId}`, { status }, {
+      const response = await axios.put(`${process.env.REACT_APP_API_URL}/api/attendence/update/${employeeId}`, { status }, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`,
         },
